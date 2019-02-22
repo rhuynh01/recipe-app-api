@@ -65,12 +65,12 @@ class PrivateTagsAPITest(TestCase):
 
     def test_create_tag_successfull(self):
         """Test creating a new tag"""
-        payload = {'name': 'Test tag'}
+        payload = {'name': 'Drinks'}
         self.client.post(TAGS_URL, payload)
 
         exists = Tag.objects.filter(
             user=self.user,
-            name=payload['name']
+            name=payload['name'],
         ).exists()
         self.assertTrue(exists)
 
